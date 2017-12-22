@@ -1,41 +1,65 @@
 <div class="modal-header log-modal-header">
   <h3 class="modal-title" id="modal-title">Log Report</h3>
 </div>
-<!--<p>{{$ctrl.buttonState}}</p>-->
+
 <div class="modal-body log-modal-body" id="modal-body">
-  <h3>Who is viewing?</h3>
-  <div class="source">
-      <ul class="list-inline"> 
-        <li ng-repeat="fam in $ctrl.checkFam">
-          <div ng-class="fam.checked ? 'activeLogReporter' : 'inactiveReporter'">
-            <label class="btn btn-info btn-xlarge btn-block logModalReporter" ng-click="$event.preventDefault(); $ctrl.isOK();" ng-model="fam.checked" uib-btn-checkbox>{{ fam.name }}</label>
-          </div>
-        </li>
-      </ul>
-    </div>  
+  <div uib-carousel carousel-controls active="0">
+    <div uib-slide index="0" >
+      <h3>Who is viewing?</h3>
+      <div class="source">
+        <ul class="list-inline"> 
+          <li ng-repeat="fam in $ctrl.checkFam">
+            <div ng-class="fam.checked ? 'activeLogReporter' : 'inactiveReporter'">
+              <label class="btn btn-info btn-xlarge btn-block logModalReporter" ng-click="$event.preventDefault(); $ctrl.isOK(); ng-model="fam.checked" uib-btn-checkbox>{{ fam.name }}</label>
+            </div>
+          </li>
+        </ul>
+      </div> 
+    </div>
 
- <!-- Working on this part -->
- <h3>Would you like to answer this question today? Do you feel well rested?</h3>
-  <div class="source">
-    <ul class="list-inline"> 
-      <li>
-        <button class="btn btn-info btn-xlarge" type="button" ng-click="$ctrl.recorderbuttonState=$ctrl.recorderbuttonState+1; $ctrl.record=true">Yes</button>
-        <button class="btn btn-info btn-xlarge" type="button" ng-click="$ctrl.recorderbuttonState=$ctrl.recorderbuttonState+1; $ctrl.record=false">No</button>
-      </li>
-    </ul>
+    <div uib-slide index="1">
+      <!-- Working on this part -->
+      <h3>Record an Answer?</h3>
+      <h4>{{$ctrl.prompt}}</h4>
+      <div class="source">
+        <ul class="list-inline"> 
+          <li>
+            <button class="btn btn-info btn-xlarge" type="button" ng-click="$ctrl.selected=true; $ctrl.record=true" >Yes</button>
+            <button class="btn btn-info btn-xlarge" type="button" ng-click="$ctrl.selected=true; $ctrl.record=false" >No</button>
+          </li>
+        </ul>
+      </div>
+      <h4 ng-show="$ctrl.record">Recording will start automatically when you click OK</h4>
+    </div>
   </div>
-  <h4 ng-show="$ctrl.record">Recording will start automatically when you click OK</h4>
-
 </div>
+
+
+<div class="modal-footer" style="background-color: WHITE;">
+<!--   <div class="col col-xs-3"> -->
+    <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 1" ng-click="$ctrl.cancel()">Cancel</button>
+  <!-- </div> -->
+  <!-- <div class="col col-xs-3"> -->
+    <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 2" ng-click="goPrev(); $ctrl.decrPage()"><</button>
+  <!-- </div> -->
+  <!-- <div class="col col-xs-3"> -->
+    <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 1" ng-click="goNext(); $ctrl.incrPage()">Ok</button>
+  <!-- </div>  -->
+  <!-- ng-disabled="!$ctrl.buttonState" -->
+  <!-- <div class="col col-xs-3"> -->
+    <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 2" ng-disabled="!$ctrl.selected" ng-click="$ctrl.ok()">Done</button>
+  <!-- </div> -->
+</div>
+
+
 <!--  
 </div>
 <div class="modal-footer">
         <button class="modal-btn btn btn-primary btn-lg" type="button" ng-disabled="!(($ctrl.personabuttonState >=1) && $ctrl.recorderbuttonState >= 1)" ng-click="$ctrl.ok()">OK</button>
  -->
 
-
-<div class="modal-footer log-modal-footer">
-        <button class="modal-btn btn btn-primary btn-xlarge modalOK" type="button" ng-disabled="!($ctrl.buttonState)" ng-click="$ctrl.ok()">OK</button>
+<!-- <div class="modal-footer log-modal-footer">
+        <button class="modal-btn btn btn-primary btn-xlarge modalOK" type="button" ng-disabled="!($ctrl.buttonState)" ng-click="$ctrl.ok()">OK</button> -->
 
 <!-- 
   <h3>Would you like to answer this question today? Do you feel well rested?</h3>
@@ -52,5 +76,5 @@
   </div>
  -->
 <!-- </div> -->
-        <button class="btn btn-warning btn-xlarge" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+       <!--  <button class="btn btn-warning btn-xlarge" type="button" ng-click="$ctrl.cancel()">Cancel</button> -->
 </div>

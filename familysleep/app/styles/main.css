@@ -18,6 +18,10 @@ html {
 body {
   margin: 0;
 }
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.carousel .carousel-indicators, .carousel .left.carousel-control, .carousel .right.carousel-control {
+    display: none;
+}
 
 /* line 33, ../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_normalize.scss */
 article,
