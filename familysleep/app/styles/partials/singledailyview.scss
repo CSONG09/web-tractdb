@@ -22,8 +22,10 @@ p.sdv-names {
 }
 
 .sdv-names {
-  font-size: 19px !important;
-  margin-top: 70px;
+  text-align: center;
+  width: 70px;
+  font-size: 20px !important;
+  margin-top: 75px;
 }
 
 .sdv-mood-pics {
@@ -44,13 +46,7 @@ p.sdv-names {
 
 .sdv-mood-report-text {
   text-align: center;
-  font-size: medium !important;
-}
-
-#sdv-name {
-	text-align: center;
-  width: 70px;
-  margin: 0;
+  font-size: 18px !important;
 }
 
 #sdv-legend {
@@ -58,7 +54,7 @@ p.sdv-names {
   margin-left: 500px;*/
   position: absolute;
   top: 65%;
-  left: 50%;
+  left: 45%;
 }
 
 #sdv-legend li {
@@ -69,7 +65,7 @@ p.sdv-names {
 #sdv-legend li:nth-child(4), 
 #sdv-legend li:nth-child(6), 
 #sdv-legend li:nth-child(8) {
-    margin-right:10px; 
+    margin-right: 25px; 
     font-size: medium;
 }
 
@@ -120,11 +116,11 @@ p.sdv-names {
 
 /* numbers */
 .sdv-sleep-data li:nth-child(odd) {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
 
 .sdv-sleep-data li:nth-child(even) {
-  font-size: 12px;
+  font-size: medium;
   margin-bottom: 30px;
 }

@@ -18,9 +18,8 @@
     </div>
 
     <div uib-slide index="1">
-      <!-- Working on this part -->
       <h3>Record an Answer?</h3>
-      <h4>{{$ctrl.prompt}}</h4>
+      <h3>{{$ctrl.prompt}}</h3>
       <div class="source">
         <ul class="list-inline"> 
           <li>
@@ -36,19 +35,15 @@
 
 
 <div class="modal-footer" style="background-color: WHITE;">
-<!--   <div class="col col-xs-3"> -->
+
     <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 1" ng-click="$ctrl.cancel()">Cancel</button>
-  <!-- </div> -->
-  <!-- <div class="col col-xs-3"> -->
+
     <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 2" ng-click="goPrev(); $ctrl.decrPage()"><</button>
-  <!-- </div> -->
-  <!-- <div class="col col-xs-3"> -->
-    <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 1" ng-click="goNext(); $ctrl.incrPage()">Ok</button>
-  <!-- </div>  -->
-  <!-- ng-disabled="!$ctrl.buttonState" -->
-  <!-- <div class="col col-xs-3"> -->
+
+    <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 1" ng-disabled="!$ctrl.buttonState" ng-click="goNext(); $ctrl.incrPage()">Ok</button>
+
     <button type="button" class="btn btn-info btn-xlarge" ng-if="$ctrl.page === 2" ng-disabled="!$ctrl.selected" ng-click="$ctrl.ok()">Done</button>
-  <!-- </div> -->
+
 </div>
 
 
@@ -61,20 +56,6 @@
 <!-- <div class="modal-footer log-modal-footer">
         <button class="modal-btn btn btn-primary btn-xlarge modalOK" type="button" ng-disabled="!($ctrl.buttonState)" ng-click="$ctrl.ok()">OK</button> -->
 
-<!-- 
-  <h3>Would you like to answer this question today? Do you feel well rested?</h3>
-  <div class="source">
-    <ul class="list-inline"> 
-      <li>
-        <button class="btn btn-info btn-lg " type="button"ng-click="$ctrl.recorderbuttonState=$ctrl.recorderbuttonState+1; $ctrl.record=true">Yes</button>
-        <button class="btn btn-info btn-lg " type="button" ng-click="$ctrl.recorderbuttonState=$ctrl.recorderbuttonState+1; $ctrl.record=false" >no</button>
-      </li>
-    </ul>
-  <div class="source">
-  <div ng-show="$ctrl.record" style="display: inline-block;">
-    <recorder></recorder>
-  </div>
- -->
 <!-- </div> -->
        <!--  <button class="btn btn-warning btn-xlarge" type="button" ng-click="$ctrl.cancel()">Cancel</button> -->
 </div>

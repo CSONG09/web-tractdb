@@ -14,6 +14,8 @@ module.factory(
             
             factory.audio = {}; // audio: {'data': audio, 'timeStamp': new Date(), 'users': users};
             factory.users = [];
+            factory.prompt = {};
+            factory.promptID = {};
 
             /*
               setting the recorder data.
@@ -26,15 +28,21 @@ module.factory(
                 
                 var doc_id = 'audio_logs' + '_' + date_format;
                 var doc_rev;
-                
+                var new_doc = {
+                    "users": factory.audio.users,
+                    "promptID": factory.promptId,
+                    "prompt": factory.prompt,
+                    "timeStamp": factory.audio.timeStamp
+                }
                 $http(  
                 {
                     method: 'POST',
                     url: BASEURL_PYRAMID + '/document/' + doc_id,
-                    data: {"users": factory.audio.users}
+                    data: new_doc
                 }).then(function success(response){
                     doc_rev = response.data._rev;
-
+                    //could null users
+                    //factory.audio.users = null;
                     $http(  
                     {
                         method: 'POST',

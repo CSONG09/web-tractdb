@@ -15,7 +15,7 @@
   top: 30px;
   left: 130px;
   margin-bottom: 20px;
-  font-size: 19px;
+  font-size: 20px;
   width: 100%;
 }
 
@@ -41,7 +41,7 @@
 
 /* line 36, singleweeklyview.scss */
 #swv-legend {
-  margin-bottom: 65px;
+  margin-bottom: 90px;
   margin-left: 400px;
   padding-top: 35px;
 }
@@ -62,7 +62,7 @@
 #swv-legend li:nth-child(4),
 #swv-legend li:nth-child(6),
 #swv-legend li:nth-child(8) {
-  margin-right: 10px;
+  margin-right: 25px;
   font-size: medium;
 }
 

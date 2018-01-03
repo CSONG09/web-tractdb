@@ -12,7 +12,6 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch',
         'ui.bootstrap',
         'tractdb.config'
     ])
